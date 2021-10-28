@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+ {% block content %}
+<h1 style="text-align:center;">EDIT Portfolio </h1>
+<form class="row g-3" style="margin:3%;" method="post">
+  <div class="col-md-15">
+    <label  class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ request.form['tittle'] }}">
+  </div>
+    <div class="col-md-15">
+    <label  class="form-label">Link</label>
+    <input type="text" class="form-control" id="link" name="link" value="{{ request.form['link']}}">
+  </div>
+ <div class="mb-3">
+  <label class="form-label">Content</label>
+  <textarea class="form-control" id="content" name="content" rows="10">{{ request.form['content'] }}</textarea>
+</div>
+  <div class="col-12">
+    <button type="submit" name = "submit_button" value="editbtn" class="btn btn-primary">Submit</button>
+  </div>
+    <div class="col-12">
+    <button type="submit" name = "submit_button" value="deletebtn" class="btn btn-danger"  onclick="return confirm('are you sure you want to delete the post?')">DELETE</button>
+  </div>
+</form>
+<hr>
+
+
+{% endblock %}

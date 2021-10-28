@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+ {% block content %}
+<h1 style="text-align:center;">Edit {{ posts[2] }}</h1>
+<form class="row g-3" style="margin:3%;" method="post">
+  <div class="col-md-15">
+    <label  class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ request.form['tittle'] or posts['title'] }}">
+  </div>
+ <div class="mb-3">
+  <label class="form-label">Content</label>
+  <textarea class="form-control" id="content" name="content" rows="10">{{ request.form['content'] or posts['content'] }}</textarea>
+</div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<hr>
+<form action="{{ url_for('delete', id=posts[0]) }}" method="POST" style="margin:3%;">
+  <div class="col-md-15">
+    <input type="submit" class="btn btn-danger btn-sm" value="deletePost" onclick="return confirm('are you sure you want to delete the post?')">
+  </div>
+</form>
+{% endblock %}

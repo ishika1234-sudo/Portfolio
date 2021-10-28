@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+ {% block content %}
+<h1 style="text-align:center;">Create new portfolio post</h1>
+<form class="row g-3" style="margin:3%;" method="post">
+  <div class="col-md-15">
+    <label  class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ request.form['tittle'] }}">
+  </div>
+ <div class="mb-3">
+  <label class="form-label">Content</label>
+  <textarea class="form-control" id="content" name="content" rows="10">{{ request.form['content'] }}</textarea>
+</div>
+    <div class="col-md-15">
+    <label  class="form-label">Link</label>
+    <input type="text" class="form-control" id="link" name="link" value="{{ request.form['link'] }}">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}

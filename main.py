@@ -10,7 +10,7 @@ from flask_paginate import Pagination, get_page_parameter
 from werkzeug.exceptions import abort
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'Oldmonkrsk5@'
+app.config['SECRET_KEY'] = 'SECRET KEY'
 
 
 def get_db_connection():
